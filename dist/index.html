@@ -8,18 +8,17 @@
     <style>
       .slideshow-container {
         position: relative;
+        width: 100%;
         max-width: 100%;
-        margin: auto;
+        margin: 2rem 0;
         overflow: hidden;
-        border-radius: 8px;
+        border-radius: 10px;
       }
-
       .slide {
         display: none;
         width: 100%;
-        transition: opacity 1s ease-in-out;
+        height: auto;
       }
-
       .slide img {
         width: 100%;
         height: auto;
@@ -28,18 +27,16 @@
     </style>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const slides = document.querySelectorAll(".slide");
+        let slides = document.querySelectorAll(".slide");
         let index = 0;
-
         function showSlide() {
-          slides.forEach((slide, i) => {
-            slide.style.display = i === index ? "block" : "none";
+          slides.forEach((s, i) => {
+            s.style.display = i === index ? "block" : "none";
           });
           index = (index + 1) % slides.length;
           setTimeout(showSlide, 4000);
         }
-
-        if (slides.length > 0) showSlide();
+        showSlide();
       });
     </script>
   </head>
@@ -63,20 +60,9 @@
           <p>Discover a versatile and elegant space tailored for weddings, parties, and all your special moments.</p>
 
           <div class="slideshow-container">
-            <!-- 31 slides -->
-            <!-- Just rename or replace these image files inside the 'images/' folder -->
-            <!-- Copy-paste these lines or duplicate them for more images -->
-            <!-- This assumes you have pic1.jpg to pic31.jpg -->
-            <!-- Below is auto-generated HTML for all 31 images -->
-            <!-- You can replace 'pic#.jpg' with your actual file names if different -->
-            <!-- Start of slide list -->
-            <!-- prettier-ignore -->
-            ${
-              Array.from({ length: 31 }, (_, i) =>
-                `<div class="slide"><img src="images/pic${i + 1}.jpg" alt="Event Image ${i + 1}" /></div>`
-              ).join("\n")
-            }
-            <!-- End of slide list -->
+            ${Array.from({ length: 31 }, (_, i) => `
+              <div class="slide"><img src="images/pic${i + 1}.jpg" alt="Event Image ${i + 1}" /></div>
+            `).join('')}
           </div>
 
           <h3>Elegant. Spacious. Memorable.</h3>
