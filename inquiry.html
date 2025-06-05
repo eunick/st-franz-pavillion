@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inquiry – St. Franz Pavillion</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  </head>
+  <body>
+    <nav class="container-fluid">
+      <ul><li><strong>St. Franz Pavillion</strong></li></ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="inquiry.html">Inquiry</a></li>
+        <li><a href="#" role="button">Book Now</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <div class="grid">
+        <section>
+          <hgroup>
+            <h2>Send Us Your Inquiry</h2>
+            <h3>We're happy to answer your questions</h3>
+          </hgroup>
+          <form action="mailto:dcaluag@gmail.com" method="POST" enctype="text/plain" class="grid">
+            <input type="text" name="name" placeholder="Your Name" aria-label="Name" required />
+            <input type="email" name="email" placeholder="Your Email" aria-label="Email" required />
+            <textarea name="message" placeholder="Your Question" aria-label="Question" rows="5" required></textarea>
+            <button type="submit">Send Inquiry</button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="container">
+      <small><a href="index.html">Home</a> • <a href="inquiry.html">Inquiry</a></small>
+    </footer>
+  </body>
+</html>

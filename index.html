@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>St. Franz Pavillion</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        margin: auto;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .slide {
+        display: none;
+        width: 100%;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".slide");
+        let index = 0;
+
+        function showSlide() {
+          slides.forEach((slide, i) => {
+            slide.style.display = i === index ? "block" : "none";
+          });
+          index = (index + 1) % slides.length;
+          setTimeout(showSlide, 4000);
+        }
+
+        if (slides.length > 0) showSlide();
+      });
+    </script>
+  </head>
+  <body>
+    <nav class="container-fluid">
+      <ul><li><strong>St. Franz Pavillion</strong></li></ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="inquiry.html">Inquiry</a></li>
+        <li><a href="#" role="button">Book Now</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <div class="grid">
+        <section>
+          <hgroup>
+            <h2>Welcome to St. Franz Pavillion</h2>
+            <h3>The perfect venue for unforgettable events</h3>
+          </hgroup>
+          <p>Discover a versatile and elegant space tailored for weddings, parties, and all your special moments.</p>
+
+          <div class="slideshow-container">
+            <!-- 31 slides -->
+            <!-- Just rename or replace these image files inside the 'images/' folder -->
+            <!-- Copy-paste these lines or duplicate them for more images -->
+            <!-- This assumes you have pic1.jpg to pic31.jpg -->
+            <!-- Below is auto-generated HTML for all 31 images -->
+            <!-- You can replace 'pic#.jpg' with your actual file names if different -->
+            <!-- Start of slide list -->
+            <!-- prettier-ignore -->
+            ${
+              Array.from({ length: 31 }, (_, i) =>
+                `<div class="slide"><img src="images/pic${i + 1}.jpg" alt="Event Image ${i + 1}" /></div>`
+              ).join("\n")
+            }
+            <!-- End of slide list -->
+          </div>
+
+          <h3>Elegant. Spacious. Memorable.</h3>
+          <p>Let your events shine in a place designed for celebration. Our modern facilities and scenic surroundings make every occasion extra special.</p>
+
+          <h3>Easy Booking & Inquiries</h3>
+          <p>Reach out through our inquiry form or book your preferred dates hassle-free.</p>
+        </section>
+      </div>
+    </main>
+
+    <section aria-label="Subscribe example">
+      <div class="container">
+        <article>
+          <hgroup>
+            <h2>Stay in Touch</h2>
+            <h3>Join our mailing list for updates and promotions</h3>
+          </hgroup>
+          <form class="grid">
+            <input type="text" id="firstname" name="firstname" placeholder="First Name" aria-label="First Name" required />
+            <input type="email" id="email" name="email" placeholder="Email" aria-label="Email" required />
+            <button type="submit" onclick="event.preventDefault()">Subscribe</button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <footer class="container">
+      <small><a href="index.html">Home</a> • <a href="inquiry.html">Inquiry</a></small>
+    </footer>
+  </body>
+</html>
