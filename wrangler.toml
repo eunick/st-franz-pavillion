@@ -1,13 +1,7 @@
 name = "st-franz-pavillion"
-type = "javascript"
-
-account_id = "enourmouz"
+main = "index.js"  # <– Required in Wrangler v4+
+compatibility_date = "2025-06-01"
 workers_dev = true
-compatibility_date = "2024-06-01"
 
 [site]
-bucket = "./dist"
-entry-point = "."
-
-[build]
-upload.format = "modules"
+bucket = "./dist"  # This is where your index.html, inquiry.html, images/ live
