@@ -1,7 +1,6 @@
 name = "st-franz-pavillion"
-main = "index.js"  # <– Required in Wrangler v4+
 compatibility_date = "2025-06-01"
 workers_dev = true
 
-[site]
-bucket = "./dist"  # This is where your index.html, inquiry.html, images/ live
+[assets]
+directory = "./dist"
